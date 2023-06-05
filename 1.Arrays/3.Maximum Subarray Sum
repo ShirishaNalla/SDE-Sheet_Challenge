@@ -1,0 +1,19 @@
+#include <bits/stdc++.h> 
+long long maxSubarraySum(int arr[], int n)
+{
+
+    int max=0,sum=0;
+    for(int i=0;i<n;i++)
+    {
+      if (sum < 0)
+       {
+        sum = 0;
+      }
+        sum=arr[i]+sum;
+        if(max<sum)
+        {
+            max=sum;
+        }
+    }
+    return max;
+}
